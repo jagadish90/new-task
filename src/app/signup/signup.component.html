@@ -1,0 +1,95 @@
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+      
+      
+              <form #regfrm="ngForm" (submit)="btnclk(regfrm)">
+
+                  <div class="form-group">
+                      Clientid:<input type="text" #id="ngModel" [(ngModel)]=pav.clientid name="id" class="form-control" required minlength="3">
+                      <span *ngIf="id.errors && id.touched">
+                        <span style="color:red"[hidden]="!id.errors.required"> Enter id</span>  
+                    <span style="color:red" [hidden]="!id.errors.minlength"> min length 3</span>
+                    </span>
+                    </div>
+                <div class="form-group">
+                Companycode:<input type="text" #id="ngModel" [(ngModel)]=pav.companycode name="id" class="form-control" required minlength="3">
+                <span *ngIf="id.errors && id.touched">
+                  <span style="color:red" [hidden]="!id.errors.required"> Enter code</span>  
+              <span style="color:red"[hidden]="!id.errors.minlength"> min length 3</span>
+              </span>
+              </div>
+                <div>
+                Companyname:<input type="text" #fn="ngModel" [(ngModel)]="pav.companyname" name="fname" class="form-control" required>
+                <span *ngIf="fn.errors && fn.touched">
+                        <span style="color:red"[hidden]="!fn.errors.required"> Enter Companyname</span>  
+                        </span>
+                </div>
+                
+                <div>
+                 CompanyAddress:<input type="text" #ln="ngModel" [(ngModel)]="pav.companyadress" name="lname" class="form-control" required>
+                 <span *ngIf="ln.errors && ln.touched">
+                        <span style="color:red"[hidden]="!ln.errors.required"> Enter Adress</span>  
+                        </span>
+                  </div>
+    
+    
+    
+                  <div  class="form-group">
+                      ClientName:<input type="text" #email="ngModel" [(ngModel)]="pav.clientname" name="mail" class="form-control" required>
+                      <span *ngIf="email.errors && email.touched">
+                            <span style="color:red"[hidden]="!email.errors.required"> Enter Clientname</span>  
+                            </span>
+                      </div>
+    
+                      
+                  <div  class="form-group">
+                      PanNo:<input type="text" #country="ngModel" [(ngModel)]="pav.panno" name="country" class="form-control" required>
+                      <span *ngIf="country.errors && country.touched">
+                            <span style="color:red" [hidden]="!country.errors.required"> Enter panno</span>  
+                            </span>
+                      </div>
+    
+                      
+                  <div  class="form-group">
+                      MobileNumber:<input type="text" #state="ngModel" [(ngModel)]="pav.mobileno" name="state" class="form-control" pattern="[7-9]{1}[0-9]{9}" required>
+                      <span *ngIf="state.errors && state.touched">
+                            <span  style="color:red"[hidden]="!state.errors.required"> Enter MobileNumber</span> 
+                            <span style="color:red" [hidden]="!state.errors.pattern">Pattern Mismatch</span>  
+                            <span style="color:red" [hidden]="!state.errors.pattern">Enter 7-9 Numbers</span>
+                            </span>
+                      </div>
+            
+                  
+                  <div>
+                    ClientEmail:<input type="text" #city="ngModel" [(ngModel)]="pav.clientemail" name="city" class="form-control" required>
+                    <span *ngIf="city.errors && city.touched">
+                            <span style="color:red"[hidden]="!city.errors.required"> Enter ClientEmail</span>  
+                            </span>
+                    </div>
+                    
+      
+             
+      
+                  
+      
+      
+                    
+        
+   
+                <div>
+                  
+                <input type="submit" class="btn btn-primary" value="Register Now">
+                </div>
+              
+      
+                
+                <!-- <h3> Data : {{regfrm.value | json}}</h3> -->
+           
+                </form>
+            </div>
+        </div>
+      </div>
+      </body>

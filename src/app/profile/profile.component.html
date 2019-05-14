@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- <body>
+  <div class="container">
+    <div class="col-md-6">
+      <div>
+        <form #regfrm="ngForm">
+          <div>
+            COMPANY_CODE:<input type="text" name="company_code" #company_code="ngModel" [(ngModel)]="b.company_code" class="form-control" required>
+
+          </div>
+
+          <div>
+            COMPANY_NAME:<input type="text" #ln="ngModel" [(ngModel)]="b.company_name" name="company_name" class="form-control" required>
+
+          </div>
+
+
+
+          <div class="form-group">
+            COMPANY_ADDRESS:<input type="text" #COMPANY_ADDRESS="ngModel" [(ngModel)]="b.company_address" name="company_address" class="form-control"
+              required>
+          </div>
+
+
+          <div class="form-group">
+            CLIENT_ID:<input type="text" #CLIENTID="ngModel" [(ngModel)]="b.client_id" name="client_id" class="form-control"
+              required>
+            
+          </div>
+
+
+          <div class="form-group">
+            CLIENT_NAME:<input type="text" #CLIENT_NAME="ngModel" [(ngModel)]="b.client_name"  class="form-control" name="client_name" required>
+           
+          </div>
+
+
+          <div>
+            PAN_NO:<input type="text" #PAN_NO="ngModel" [(ngModel)]="b.pan_no"   name="pan_no" class="form-control" required>
+           
+          </div>
+          <div>
+            MOBILE_NO:<input type="text" #MOBILE_NO="ngModel" [(ngModel)]="b.mobile_no" name="mobile_no" class="form-control" required>
+           
+          </div>
+          <div>
+            CLIENT_EMAIL:<input type="text" #CLIENT_EMAIL="ngModel" [(ngModel)]="b.client_email" name="client_email"  class="form-control" required>
+           
+          </div>
+          <br>
+          <div>
+
+            <input type="button" (click)="btnclk(regfrm)" class="btn btn-primary" value="Edit Profile">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</body>  -->
+<div class="jaga">
+<button [routerLink]="['/login']" class="btn btn-info">SignOut</button>
+</div>
+
+
+
+  <div class="container">
+  <div class="card-columns">
+     
+          <div class="card" style="width:300px">
+             
+              <div class="card-body" style="background-color:palegreen">
+                <h4 class="card-title">{{b.client_name}}</h4>
+                <p class="card-text">Company :-{{b.company_name}} ({{b.company_code}})</p>
+                <p class="card-text">Office Address:-{{b.company_address}}</p>
+                <p class="card-text">PanNo:-{{b.pan_no}}</p>
+                <p class="card-text">MobileNo:-{{b.mobile_no}}</p>
+                <p class="card-text">Email:-{{b.client_email}}</p>
+       
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >
+                Edit
+                </button>
+              
+              </div>
+            </div>
+          
+     
+      
+  </div>
+  
+  </div>
+
+  <h1 align="center" style="color:rgba(112, 125, 136, 0.877)">Ledger details</h1>
+  
+<app-ledger></app-ledger>
+
+
+
+
+  
+  
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          
+          <div class="modal-body">
+         
+            <form #regfrm="ngForm">
+              
+            
+    
+              
+    
+    
+    
+    
+              
+              <div>
+                MOBILE_NO:<input type="text" #MOBILE_NO="ngModel" [(ngModel)]="b.mobile_no" name="mobile_no" class="form-control" required>
+               
+              </div>
+              <div>
+                CLIENT_EMAIL:<input type="text" #CLIENT_EMAIL="ngModel" [(ngModel)]="b.client_email" name="client_email"  class="form-control" required>
+               
+              </div>
+              <br>
+              <div>
+    
+                <input type="button" data-dismiss="modal" (click)="btnclk(regfrm)" class="btn btn-primary" value="Update">
+              </div>
+            </form>
+
+
+
+
+          </div>
+          
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
